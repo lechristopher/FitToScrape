@@ -31,6 +31,7 @@ app.use(express.static("public"));
 // Database configuration with mongoose
 mongoose.connect("mongodb://localhost/techdb");
 var db = mongoose.connection;
+// mongodb://heroku_3sh2cxrm:c6ijl610dbcjo0pu91q9oihjbj@ds129434.mlab.com:29434/heroku_3sh2cxrm
 
 // Show any mongoose errors
 db.on("error", function(error) {
@@ -65,8 +66,8 @@ app.get("/scrape", function(req, res) {
 
       // Add the text and href of every link, and save them as properties of the result object
       result.title = $(this).children(".post-title").text();
-      // result.link = $(this).children("a").attr("href");
-      result.excerpt = $(this).children("excerpt").text();
+      result.link = $(this).children("a").attr("href");
+      // result.excerpt = $(this).children("excerpt").text();
 
 
       // Using our Article model, create a new entry
