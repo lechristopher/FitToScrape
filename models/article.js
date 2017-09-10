@@ -10,8 +10,8 @@ var ArticleSchema = new Schema({
     type: String,
     required: true
   },
-  // body is a required string
-  body: {
+  // link is a required string
+  link: {
     type: String,
     required: true
   },
